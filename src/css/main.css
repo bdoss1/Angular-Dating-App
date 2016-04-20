@@ -1,1 +1,96 @@
-/* add custom styles */
+/* For Navbar */
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #00aeef;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-family: "proxima-nova-soft", "Helvetica Neue", helvetica, sans-serif;
+  font-size: 17px;
+}
+
+ul.topnav li a:hover {background-color: #111;}
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+/* For ngCloak */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+#navbarLogo {
+  font-size: 2em;
+}
+
+.navbar-fixed-bottom {
+  background-color: #00aeef;
+  color: #f2f2f2;
+}
+
+.navbar-fixed-bottom p {
+  padding-top: 18px;
+  padding-bottom: 14px;
+  text-align: center;
+}
+
+body { background-color: transparent; }
+
+.landingBanner {
+  height: 500px;
+  background: url(../images/hug.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#getStarted {
+  margin-top: 180px;
+  background-color: #00aeef;
+
+}
+
+.membersBanner {
+  height: 500px;
+  background: url(../images/sunset.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

@@ -1,6 +1,10 @@
 //Set myApp module
-angular
-  .module('myApp', []);
+(function () {
 
+  'use strict';
 
+  angular.module('myApp', [
+    'ngRoute'
+  ]);
 
+})();
