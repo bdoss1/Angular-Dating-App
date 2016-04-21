@@ -1,23 +1,65 @@
 <div class="container-fluid">
   <div class="row">
     <!--Begin member listing-->
-    <div class="col-md-4" style="border:solid black 1px">
+    <div id="memberScroll" class="col-md-4" style="border:solid black 1px">
       <table style="width:100%">
-        <tr>
-          <td>{{greeting}}</td>
-          <td>Smith</td>
-          <td>50</td>
-        </tr>
-        <tr>
-          <td>Eve</td>
-          <td>Jackson</td>
-          <td>94</td>
+        <tr ng-repeat="member in members" ng-click="showIndividualView(member._id)">
+          <td>
+            <img ng-src="{{member.avatar}}" alt="Member's Photo"/>
+          </td>
+          <td>
+            <h4>{{member.username}}</h4>
+            <p><strong>Gender:</strong> {{ member.gender | genderFilter }}</p>
+            <p><strong>City:</strong> {{member.address.city}}</p>
+            <p><strong>Seeking:</strong></p>
+            <ul>
+              <li ng-repeat="interest in member.interestedIn">{{interest | interestedInFilter}}</li>
+            </ul>
+          </td>
         </tr>
       </table>
     </div>
-    <!--Begin member view area-->
-    <div class=" membersBanner col-md-8">
-
+    <!--Begin member individual view area-->
+    <div class="membersBanner col-md-8">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div id="individualView" ng-show="showMember" class="col-md-8">
+          <table style="width:100%">
+            <tr>
+              <td>
+                <img style="border-radius:50%" ng-src="{{memberData.avatar}}" alt="Member's Photo"/>
+              </td>
+              <td>
+                <h4>{{memberData.username}}</h4>
+                <p><strong>Gender:</strong> {{ memberData.gender | genderFilter }}</p>
+                <p><strong>City:</strong> {{memberData.address.city}}</p>
+                <p><strong>Seeking:</strong></p>
+                <ul>
+                  <li ng-repeat="interest in memberData.interestedIn">{{interest | interestedInFilter}}</li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+          <form class="form-horizontal">
+            <fieldset>
+              <div class="form-group">
+                <label for="textArea" class="col-lg-2 control-label"></label>
+                <div class="col-lg-10">
+                  <textarea class="form-control" rows="3" id="textArea" placeholder="Send {{memberData.username}} a message!"></textarea>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-10 col-lg-offset-2">
+                    <button id="sendMessageButton" type="submit" class="btn btn-primary pull-right">Send!</button>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
     </div>
   </div>
 </div>

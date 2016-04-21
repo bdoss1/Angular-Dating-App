@@ -25,6 +25,10 @@
       templateUrl: '../partials/members.html',
       controller: 'MembersCtrl'
     })
+    .when('/profile', {
+      templateUrl: '../partials/profile.html',
+      controller: 'ProfileCtrl'
+    })
     .otherwise('/');
 
   }
