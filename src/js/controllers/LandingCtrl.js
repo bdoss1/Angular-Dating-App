@@ -9,8 +9,6 @@
 
   function LandingCtrl($scope, $window) {
 
-    $scope.greeting = "jjj";
-
   }
 
 })();

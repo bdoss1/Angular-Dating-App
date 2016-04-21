@@ -12,10 +12,10 @@
     //Individual view is initally false
     $scope.showMember = false;
 
-    //Gets all members
+    //Get all members
     $scope.members = membersDataService.getAllMembers()
     .then(function(members) {
-        //Filter out inactive members
+      //Filter out inactive members
       var activeMembers = members.data.data.filter(function (el){
           return el.active;
       });
