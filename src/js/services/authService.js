@@ -19,7 +19,6 @@
     var user = {};
     return {
       login: function(user) {
-        console.log("userrr", user);
         return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/auth/login', user);
       },
       logout: function(user) {
@@ -33,7 +32,7 @@
         $window.localStorage.setItem('user', JSON.stringify(userData.data.data.user));
         $window.localStorage.setItem('token', JSON.stringify(userData.data.data.token));
       },
-      getUserInfo: function(userData) {
+      getUserInfo: function() {
         return $window.localStorage.getItem('user');
       }
     };

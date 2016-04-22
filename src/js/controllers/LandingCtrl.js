@@ -5,9 +5,11 @@
   angular.module('myApp')
   .controller('LandingCtrl', LandingCtrl);
 
-  LandingCtrl.$inject = ['$scope', '$window'];
+  LandingCtrl.$inject = ['$rootScope', '$scope', '$window'];
 
-  function LandingCtrl($scope, $window) {
+  function LandingCtrl($rootScope, $scope, $window) {
+
+    $rootScope.loggedIn = false;
 
   }
 

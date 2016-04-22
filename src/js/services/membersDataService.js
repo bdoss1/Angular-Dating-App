@@ -39,6 +39,22 @@
           .then(function(student) {
             return student;
           });
+      },
+      getConversation: function(userID, friendID) {
+
+        var arg = userID + "/conversations/" + friendID;
+        console.log("arg", arg);
+        return crudService.getOne('members/' + arg)
+          .then(function(conversation) {
+            return conversation;
+          });
+      },
+      sendMessage: function (message) {
+        var url = 'members/' + message.id +'/conversations';
+        return crudService.addOne(url, message)
+          .then(function(conversation) {
+            return conversation;
+          });
       }
     };
   }

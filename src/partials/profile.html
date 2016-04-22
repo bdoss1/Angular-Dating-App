@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <!--Edit Account Form: username, email, and slug cannot be changed.-->
+    <div class="col-md-6">
+      <form class="form-horizontal" ng-submit='editUser()'>
+        <fieldset>
+        <legend>Edit Account</legend>
+        <div class="form-group">
+          <label for='firstName'>First Name:</label><br>
+          <input type='text' ng-model='user.names.firstName'><br>
+        </div>
+        <div class="form-group">
+          <label for='lastName'>Last Name:</label><br>
+          <input type='text' ng-model='user.names.lastName'><br>
+        </div>
+        <div class="form-group">
+          <label for='avatar'>Avatar Url:</label><br>
+          <input type='text' ng-model='user.avatar'><br>
+        </div>
+        <div class="form-group">
+          <label for='password'>Password:</label><br>
+          <input type='password' ng-model='user.password'><br>
+        </div>
+        <div class="form-group">
+          <label for='dob'>Date of Birth:</label><br>
+          <input type='text' ng-model='user.dob'><br>
+        </div>
+        <div class="form-group">
+          <label for='phone'>Phone Number:</label><br>
+          <input type='text' ng-model='user.phone'><br>
+        </div>
+        <div class="form-group">
+          <label for='street'>Street Address:</label><br>
+          <input type='text' placeholder='enter street address' ng-model='user.address.street'><br>
+        </div>
+        <div class="form-group">
+          <label for='suite'>Suite Number:</label><br>
+          <input type='text' placeholder='enter suite number' ng-model='user.address.suite'><br>
+        </div>
+        <div class="form-group">
+          <label for='city'>City:</label><br>
+          <input type='text' placeholder='enter city' ng-model='user.address.city'><br>
+        </div>
+        <div class="form-group">
+          <label for='zipcode'>Zip Code:</label><br>
+          <input type='text' placeholder='enter location zip code' required ng-model='user.address.zipcode' value='80203'><br>
+        </div>
+        <div class="form-group">
+          <label for='website'>Website Url:</label><br>
+          <input type='text' placeholder='enter website url' ng-model='user.website'><br>
+        </div>
+        <div class="form-group">
+          <label for='gender'>Gender:</label><br>
+          <select required ng-model='user.gender'>
+              <option value='female' selected='selected'>Female</option>
+              <option value='male'>Male</option>
+          </select><br>
+        </div>
+        <button type='submit' class='btn btn-secondary btn-block'>Register!</button>
+        </fieldset>
+      </form>
+    </div>
+    <!--Profile Preview-->
+    <div class="col-md-6">
+
+    </div>
+  </div>
+</div>

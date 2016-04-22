@@ -39,19 +39,30 @@
                 <h4>{{memberData.username}}</h4>
                 <p><strong>Gender:</strong> {{ memberData.gender | genderFilter }}</p>
                 <p><strong>City:</strong> {{memberData.address.city}}</p>
-                <p><strong>Seeking:</strong></p>
-                <ul>
-                  <li ng-repeat="interest in memberData.interestedIn">{{interest | interestedInFilter}}</li>
-                </ul>
+                <p><strong>Description: </strong>{{memberData.description}}</p>
               </td>
             </tr>
           </table>
-          <form class="form-horizontal">
+          <!--Begin chat bubbles-->
+          <div class="row" ng-repeat="message in conversation">
+            <div class="col-md-1"></div>
+            <div ng-show="!bubbleRight(message._sender)" class="col-md-2 chatWindow"></div>
+            <div ng-show="bubbleRight(message._sender)" class="chatWindow col-md-4"></div>
+            <div class="col-md-4 talk-bubble round tri-right border" ng-class="bubblePosition(message._sender)">
+              <div class="talktext">
+                <p>{{message.content}}</p>
+              </div>
+            </div>
+            <div ng-show="!bubbleRight(message._sender)" class="chatWindow col-md-4"></div>
+            <div ng-show="bubbleRight(message._sender)" class="chatWindow col-md-2"></div>
+            <div class="col-md-1"></div>
+          </div>
+          <form ng-submit="sendMessage()" class="form-horizontal">
             <fieldset>
               <div class="form-group">
                 <label for="textArea" class="col-lg-2 control-label"></label>
                 <div class="col-lg-10">
-                  <textarea class="form-control" rows="3" id="textArea" placeholder="Send {{memberData.username}} a message!"></textarea>
+                  <textarea ng-model="message.content" class="form-control" rows="3" id="textArea" placeholder="Send {{memberData.username}} a message!"></textarea>
                 </div>
                 <div class="form-group">
                   <div class="col-lg-10 col-lg-offset-2">

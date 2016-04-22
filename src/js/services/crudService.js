@@ -29,7 +29,7 @@
           });
       },
       addOne: function(resource, payload) {
-        return $http.post('/'+resource, payload)
+        return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/' + resource, payload)
           .then(function(res){
             return res;
           })

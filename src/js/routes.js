@@ -56,16 +56,16 @@
     .otherwise({redirectTo: '/login'});
     $httpProvider.interceptors.push('authInterceptor');
   }
-
+  //Changes the current route if necessary
   function routeChange($rootScope, $location, $window, authService) {
     $rootScope.$on('$routeChangeStart', function(event, next, current) {
-      // if route us restricted and no token is present
+      // if route is restricted and no token is present
       if(next.restricted && !$window.localStorage.getItem('token')) {
         $location.path('/login');
       }
-      // if token and prevent logging in is true
+      // if token and preventLoggingIn is true
       if(next.preventLoggedIn && $window.localStorage.getItem('token')) {
-        $location.path('/');
+        $location.path('/members');
       }
     });
   }
