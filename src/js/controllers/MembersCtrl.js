@@ -21,8 +21,6 @@
 
       $rootScope.user = JSON.parse(authService.getUserInfo());
 
-
-
       //Filter out inactive members
       var activeMembers = members.data.data.filter(function (el){
           return el.active;

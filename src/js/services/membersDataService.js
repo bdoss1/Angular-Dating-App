@@ -23,19 +23,19 @@
           });
       },
       addMember: function(payload) {
-        crudService.addOne('students', payload)
+        crudService.addOne('members', payload)
           .then(function(student) {
             return student;
           });
       },
-      editMember: function(student) {
-        crudService.editOne('students', student)
-          .then(function(student) {
-            return student;
+      editMember: function(payload) {
+        return crudService.editOne('members/' + payload._id, payload)
+          .then(function(member) {
+            return member;
           });
       },
-      removeMember: function(studentID) {
-        crudService.removeOne('students', studentID)
+      removeMember: function(memberID) {
+        crudService.removeOne('members', studentID)
           .then(function(student) {
             return student;
           });

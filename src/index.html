@@ -12,10 +12,11 @@
     <header>
       <ul class="topnav">
         <li><a id="navbarLogo" href="/#/">Dater</a></li>
+        <li ng-show="loggedIn"><a href="/#/profile">Welcome {{user.username + "!"}}</a></li>
+        <li ng-show="loggedIn"><a href="/#/profile">My Profile</a></li>
         <li ng-show="!loggedIn"><a href="/#/login">Login</a></li>
         <li ng-show="!loggedIn"><a href="/#/register">Register</a></li>
         <li ng-show="loggedIn"><a href="/#/logout" class="pull-right">Logout</a></li>
-        <li ng-show="loggedIn"><a><strong>Welcome {{user.username + "!"}}</strong></a></li>
       </ul>
     </header>
   <div ng-view>

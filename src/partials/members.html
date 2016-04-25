@@ -2,11 +2,11 @@
   <div class="row">
     <!--Begin member listing-->
     <div id="memberScroll" class="col-md-4" style="border:solid black 1px">
-      <!--div class="loading-spiner-holder" data-loading >
+      <div class="loading-spiner-holder" loading-directive>
         <div class="loading-spiner">
           <img src="../../images/heart.gif"/>
         </div>
-      </div-->
+      </div>
       <table style="width:100%">
         <tr ng-repeat="member in members" ng-click="showIndividualView(member._id)">
           <td>
@@ -34,6 +34,8 @@
             <tr>
               <td>
                 <img class="memberAvatar" style="border-radius:50%" ng-src="{{memberData.avatar}}" alt="Member's Photo"/>
+              </td>
+              <td style='width: 15px'>
               </td>
               <td>
                 <h4>{{memberData.username}}</h4>

@@ -9,8 +9,8 @@
     0: 'Men',
     1: 'Women',
     2: 'Non-binaries',
-    3: 'Two Spirits',
-    4: 'Other'
+    3: 'Other',
+    4: 'Two Spirit'
   };
 
   function interestedInFilter() {

@@ -7,11 +7,13 @@
 
   crudService.$inject = ['$http'];
 
+  var URL = 'https://galvanize-student-apis.herokuapp.com/gdating/';
+
   function crudService($http) {
 
     return {
       getAll: function(resource) {
-        return $http.get('https://galvanize-student-apis.herokuapp.com/gdating/'+resource)
+        return $http.get(URL+resource)
           .then(function(res){
             return res;
           })
@@ -20,7 +22,7 @@
           });
       },
       getOne: function(resource) {
-        return $http.get('https://galvanize-student-apis.herokuapp.com/gdating/'+resource)
+        return $http.get(URL+resource)
           .then(function(res){
             return res;
           })
@@ -29,7 +31,7 @@
           });
       },
       addOne: function(resource, payload) {
-        return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/' + resource, payload)
+        return $http.post(URL + resource, payload)
           .then(function(res){
             return res;
           })
@@ -38,8 +40,9 @@
           });
       },
       editOne: function(resource, payload) {
-        return $http.put('/'+resource+'/'+payload._id, payload)
+        return $http.put(URL + resource, payload)
           .then(function(res){
+            console.log(res);
             return res;
           })
           .catch(function(err){

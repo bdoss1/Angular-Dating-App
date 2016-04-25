@@ -117,3 +117,31 @@ body { background-color: transparent; }
   height: 128px;
 }
 
+ul {
+  list-style-type: none;
+}
+
+#profilePage {
+  height: 1000px;
+  background: url(../images/hands.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: black;
+}
+
+#profilePage button {
+  color: white;
+}
+
+/* for profile page */
+.panel-transparent {
+  background: none;
+  margin-top: 40px;
+}
+
+#editAccount {
+  height: 1000px;
+  overflow: scroll;
+}

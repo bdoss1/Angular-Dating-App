@@ -1,17 +1,18 @@
-<div class="container">
+<div id="profilePage" class="container-fluid">
   <div class="row">
+    <div class="col-md-2"></div>
     <!--Edit Account Form: username, email, and slug cannot be changed.-->
-    <div class="col-md-6">
+    <div id="editAccount" class="col-md-4">
       <form class="form-horizontal" ng-submit='editUser()'>
         <fieldset>
         <legend>Edit Account</legend>
         <div class="form-group">
           <label for='firstName'>First Name:</label><br>
-          <input type='text' ng-model='user.names.firstName'><br>
+          <input type='text' ng-model='user.names.firstName'>
         </div>
         <div class="form-group">
           <label for='lastName'>Last Name:</label><br>
-          <input type='text' ng-model='user.names.lastName'><br>
+          <input type='text' ng-model='user.names.lastName'>
         </div>
         <div class="form-group">
           <label for='avatar'>Avatar Url:</label><br>
@@ -51,18 +52,35 @@
         </div>
         <div class="form-group">
           <label for='gender'>Gender:</label><br>
-          <select required ng-model='user.gender'>
-              <option value='female' selected='selected'>Female</option>
-              <option value='male'>Male</option>
+          <select ng-model='user.gender'>
+            <option value=0>Male</option>
+            <option value=1>Female</option>
+            <option value=2>Non-binary</option>
+            <option value=3>Other</option>
           </select><br>
         </div>
-        <button type='submit' class='btn btn-secondary btn-block'>Register!</button>
+        <button style="background-color: red" type='submit' class='btn btn-secondary'>Save Changes</button>
         </fieldset>
       </form>
     </div>
     <!--Profile Preview-->
-    <div class="col-md-6">
-
+    <div class="col-md-4">
+      <div class="panel panel-default panel-transparent">
+        <div class="panel-body">
+            <img class="memberAvatar" style="border-radius:50%" ng-src="{{user.avatar}}" alt="Your Photo"/>
+            <h3>{{user.names.firstName + ' '  + user.names.lastName}}</h3>
+            <p>Date of birth: {{ user.dob | date:'longDate'}}</p>
+            <p><strong>Address Information:</strong></p>
+            <p>{{user.address.street}}</p>
+            <p>{{user.address.suite}}</p>
+            <p>{{user.address.city}}</p>
+            <p>{{user.address.zipcode}}</p>
+            <p ng-show="user.address.geo">Latitude: {{user.address.geo.lat}}</p>
+            <p ng-show="user.address.geo">Longitude: {{user.address.geo.lng}}</p>
+            <p ng-show="user.website">Website: {{user.website}}</p>
+        </div>
+      </div>
     </div>
+    <div class="col-md-2"></div>
   </div>
 </div>

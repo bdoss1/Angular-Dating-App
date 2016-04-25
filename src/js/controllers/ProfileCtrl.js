@@ -13,6 +13,20 @@
     $rootScope.loggedIn = true;
 
     $rootScope.user = JSON.parse(authService.getUserInfo());
+
+    console.log($rootScope.user._id);
+
+    $scope.editUser = function () {
+      membersDataService.editMember($rootScope.user)
+      .then(function(member) {
+
+      //Update $rootScope.user with new info
+      $rootScope.user = member;
+      //Update local storage with new info
+      authService.setUserInfo(member);
+
+      });
+    };
   }
 
 })();
