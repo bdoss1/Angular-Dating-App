@@ -7,7 +7,7 @@
 
   crudService.$inject = ['$http'];
 
-  var URL = 'https://galvanize-student-apis.herokuapp.com/gdating/';
+  var URL = 'https://gdating-backend-api.herokuapp.com/gdating/';
 
   function crudService($http) {
 

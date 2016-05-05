@@ -15,18 +15,20 @@
 
   authService.$inject = ['$http', '$window'];
 
+  var URL = 'https://gdating-backend-api.herokuapp.com/gdating/auth/'
+
   function authService($http, $window) {
     var user = {};
     return {
       login: function(user) {
-        return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/auth/login', user);
+        return $http.post(URL + 'login', user);
       },
       logout: function(user) {
         user = null;
         $window.localStorage.clear();
       },
       register: function(user) {
-        return $http.post('https://galvanize-student-apis.herokuapp.com/gdating/auth/register', user);
+        return $http.post(URL + 'register', user);
       },
       setUserInfo: function(userData) {
         $window.localStorage.setItem('user', JSON.stringify(userData.data.data.user));

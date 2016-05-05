@@ -117,6 +117,10 @@ body { background-color: transparent; }
   height: 128px;
 }
 
+.testimonialImg {
+  height: 200px;
+}
+
 ul {
   list-style-type: none;
 }

@@ -8,6 +8,8 @@
   MembersCtrl.$inject = ['$rootScope', '$scope', '$window', 'membersDataService', 'authService'];
 
   function MembersCtrl($rootScope, $scope, $window, membersDataService, authService) {
+    //Show the loading spinner
+    $scope.loading = true;
 
     //User is logged in when they come to this page
     $rootScope.loggedIn = true;
@@ -28,6 +30,8 @@
 
       $scope.members = activeMembers;
 
+      //Hide the loading spinner
+      $scope.loading = false;
     });
 
     //Displays the individual view of a selected member
