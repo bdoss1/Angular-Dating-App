@@ -6,11 +6,11 @@
     .filter('interestedInFilter', interestedInFilter);
 
   var interestKey = {
-    0: 'Men',
-    1: 'Women',
-    2: 'Non-binaries',
-    3: 'Other',
-    4: 'Two Spirit'
+    0: 'Friendship',
+    1: 'Dating',
+    2: 'Marriage',
+    3: 'Long-term commitment',
+    4: 'Random Play'
   };
 
   function interestedInFilter() {

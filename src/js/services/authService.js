@@ -15,7 +15,7 @@
 
   authService.$inject = ['$http', '$window'];
 
-  var URL = 'https://gdating-backend-api.herokuapp.com/gdating/auth/'
+  var URL = 'https://gdating-backend-api.herokuapp.com/gdating/auth/';
 
   function authService($http, $window) {
     var user = {};

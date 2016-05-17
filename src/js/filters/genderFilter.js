@@ -6,10 +6,10 @@
     .filter('genderFilter', genderFilter);
 
   var genderKey = {
-    0: 'Man',
-    1: 'Woman',
-    2: 'Non-binary',
-    3: 'Other',
+    0: 'Male',
+    1: 'Female',
+    2: 'Male',
+    3: 'Non-binary',
     4: 'Two Spirit'
   };
 

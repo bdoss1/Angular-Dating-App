@@ -27,6 +27,12 @@
       var activeMembers = members.data.data.filter(function (el){
           return el.active;
       });
+      console.log(activeMembers);
+      console.log($rootScope.user);
+      //Filter current user
+      activeMembers = members.data.data.filter(function (el){
+          return $rootScope.user.username !== el.username;
+      });
 
       $scope.members = activeMembers;
 
