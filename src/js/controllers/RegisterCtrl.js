@@ -24,7 +24,7 @@
 
     $scope.loginAsGuest = function() {
       var guestUser = {
-        email: "Corrine_Reinger274@yahoo.com",
+        email: "corrine_reinger274@yahoo.com",
         password: "mypassword"
       };
 
