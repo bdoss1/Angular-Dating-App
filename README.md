@@ -1,11 +1,15 @@
-# Angular-Dating-App
+# Angular-Dating-App  
 
-This is a front-end for a dating/networking site that uses the server at http://galvanize-student-apis.herokuapp.com/gdating/api-docs/#/ as its back-end.
+Live Site: http://datespot.tech/
 
-Technologies used:  
-Html
-Css
-Javascript
-JQuery
-Bootstrap
-AngularJS
+
+This is a front-end for a dating/networking site that uses the server at https://gdating-backend-api.herokuapp.com/gdating/api-docs/#/ as its back-end.
+
+Technologies used:    
+AngularJS  
+Bootstrap  
+JavaScript  
+Html  
+Css  
+
+ 
